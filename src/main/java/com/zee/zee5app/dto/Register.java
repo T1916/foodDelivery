@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
+@Data
 @Setter
 @Getter
 @ToString
@@ -38,10 +38,14 @@ import lombok.ToString;
 @Table(name = "reg")
 public class Register implements Comparable<Register> 
 {
-	public Register(String string, String string2, String string3, String string4, String string5) 
+	public Register()
 	{
-		// TODO Auto-generated constructor stub
+		
 	}
+//	public Register(String string, String string2, String string3, String string4, String string5) 
+//	{
+//		// TODO Auto-generated constructor stub
+//	}
 	
 //	public Register(String id, String firstName, String lastName, String email, String password, String ContactNumber) 
 //			throws InvalidIdLengthException, InvalidNameException 
@@ -58,8 +62,8 @@ public class Register implements Comparable<Register>
 	
 	// it will consider this column as Primary Key
 	// camel naming conventions are converted to snake case
-	@Column(name = "regid")	
 	@Id
+	@Column(name = "regid")	
 	private String id;
 	
 	// it should have length of 6.
@@ -81,8 +85,6 @@ public class Register implements Comparable<Register>
 	@Size(max=100)
 	@NotBlank
 	private String password;
-	
-	@NotBlank
 	private BigDecimal ContactNumber;
 	
 	
@@ -103,9 +105,9 @@ public class Register implements Comparable<Register>
 		return o.id.compareTo(this.getId());
 	}
 	
-	public void setContactNumber(String contactNumber) {
-		this.ContactNumber = new BigDecimal(contactNumber);
-	}
+//	public void setContactNumber(String contactNumber) {
+//		this.ContactNumber = new BigDecimal(contactNumber);
+//	}
 
 	
 	

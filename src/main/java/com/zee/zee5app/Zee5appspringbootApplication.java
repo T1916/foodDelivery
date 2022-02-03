@@ -48,24 +48,23 @@ public class Zee5appspringbootApplication
 		
 		
 	// ---------- REGISTER ---------- //	
-//		//UserRepository userRepository = applicationContext.getBean(UserRepository.class);
-//		Register register;
-//		register = new Register("0000036", "vwxyzabcdef", "ghi", "tavishisingh11@gmail.com", "password2222");
-//		register.setContactNumber("9824293774");
-//		
-//		System.out.println("Register Object: " + register);
-//		//Register result = userRepository.save(register);
-//		System.out.println(userservice.addUser(register));
-//		try {
-//			System.out.println(userservice.getUserById("0000035"));
-//			System.out.println(userservice.getAllUserDetails());
-//			System.out.println(userservice.deleteUserById("0000035"));
-//			System.out.println(userservice.getAllUserDetails());
-//		} catch (InvalidNameException | IdNotFoundException | InvalidEmailException | InvalidPasswordException
-//				| InvalidIdLengthException | SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		//UserRepository userRepository = applicationContext.getBean(UserRepository.class);
+		Register register;
+		register = new Register("0000036", "vwxyzabcdef", "ghi", "tavishisingh11@gmail.com", "password2222", new BigDecimal("9824293774"));
+		
+		System.out.println("Register Object: " + register);
+		//Register result = userRepository.save(register);
+		System.out.println(userservice.addUser(register));
+		try {
+			System.out.println(userservice.getUserById("0000035"));
+			System.out.println(userservice.getAllUserDetails());
+			System.out.println(userservice.deleteUserById("0000035"));
+			System.out.println(userservice.getAllUserDetails());
+		} catch (InvalidNameException | IdNotFoundException | InvalidEmailException | InvalidPasswordException
+				| InvalidIdLengthException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	// ----------- LOGIN -------------//
 		Login login;
