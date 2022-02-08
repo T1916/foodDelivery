@@ -55,7 +55,7 @@ public class Login
 	
 	
 //	@OneToOne
-//	@JoinColumn(name = "registerId")
+//	@JoinColumn(name = "regId")
 //	@JsonProperty(access = Access.WRITE_ONLY)
 //	private Register register;
 

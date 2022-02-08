@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.learning.exception.AlreadyExistsException;
 import com.learning.exception.IdNotFoundException;
+import com.learning.exception.NameNotFoundException;
 
 @RestControllerAdvice
 public class ExceptionAdvice 
@@ -20,6 +21,15 @@ public class ExceptionAdvice
 	{
 		HashMap<String, String> map = new HashMap<>();
 		map.put("message", "Record already exists" + e.getMessage());
+		return ResponseEntity.badRequest().body(map);
+		
+	}
+	
+	@ExceptionHandler(NameNotFoundException.class)
+	public ResponseEntity<?> NameNotFoundExceptionHandler(NameNotFoundException e)
+	{
+		HashMap<String, String> map = new HashMap<>();
+		map.put("message", "Sorry food not found" + e.getMessage());
 		return ResponseEntity.badRequest().body(map);
 		
 	}

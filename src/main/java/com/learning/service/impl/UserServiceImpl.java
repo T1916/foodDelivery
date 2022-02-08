@@ -76,10 +76,10 @@ public class UserServiceImpl implements UserService
 	{
 		// TODO Auto-generated method stub
 		//Register optional = this.getUserById(id);
-		boolean status = userRepo.existsByEmail(email);
+		boolean status = userRepo.existsById(id);
 		if(!status)
 		{
-			throw new InvalidEmailException("Sorry user with email: " + email + " not found");
+			throw new IdNotFoundException("Sorry user with ID: " + id + " not found");
 		}
 		else
 		{

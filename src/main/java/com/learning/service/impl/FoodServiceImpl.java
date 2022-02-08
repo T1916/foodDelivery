@@ -58,20 +58,22 @@ public class FoodServiceImpl implements FoodService
 	@Override
 	public Food updateFood(Integer id, String name,  Food food) throws IdNotFoundException, NameNotFoundException 
 	{
-		// TODO Auto-generated method stub
-		boolean status = foodRepo.existsByFoodName(name);
-		if(!status)
-		{
-			throw new NameNotFoundException("Sorry, food not found");
-		}
-		else
-		{
-			Food optional = this.getFoodById(id);
-			foodRepo.deleteById(optional.getId());
-			optional = food;
-			foodRepo.save(optional);
-			return food;
-		}
+//		// TODO Auto-generated method stub
+//		boolean status = foodRepo.existsByFoodName(name);
+//		if(!status)
+//		{
+//			throw new NameNotFoundException("Sorry, food not found");
+//		}
+//		else
+//		{
+//			Food optional = this.getFoodById(id);
+//			foodRepo.deleteById(optional.getId());
+//			optional = food;
+//			foodRepo.save(optional);
+//			return food;
+//		}
+		
+		return null;
 	}
 
 	@Override
@@ -84,16 +86,18 @@ public class FoodServiceImpl implements FoodService
 	@Override
 	public Optional<List<Food>> getFoodByFoodType(String foodType) throws NameNotFoundException 
 	{
-		// TODO Auto-generated method stub
-		Optional<List<Food>> optional = foodRepo.findByFoodType(foodType);
-		if(optional.isEmpty())
-		{
-			throw new NameNotFoundException("Sorry Food Not Found");
-		}
-		else
-		{
-			return optional;
-		}
+//		// TODO Auto-generated method stub
+//		Optional<List<Food>> optional = foodRepo.findByFoodType(foodType);
+//		if(optional.isEmpty())
+//		{
+//			throw new NameNotFoundException("Sorry Food Not Found");
+//		}
+//		else
+//		{
+//			return optional;
+//		}
+		
+		return null;
 		
 	}
 

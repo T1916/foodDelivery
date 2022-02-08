@@ -49,7 +49,7 @@ public class Food
 	@NotBlank
 	private String description;
 	
-	@Size(max=100)
+	@Size(max=1000)
 	@NotBlank
 	private String foodPic;
 	
