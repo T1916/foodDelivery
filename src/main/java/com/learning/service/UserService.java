@@ -18,9 +18,9 @@ import com.learning.exception.NameNotFoundException;
 public interface UserService 
 {
 	public Register addUser(Register register) throws AlreadyExistsException;
-	public Register updateUser(Integer id, String email, Register register) throws IdNotFoundException, InvalidEmailException;
+	public Register updateUser(Long id, String email, Register register) throws IdNotFoundException, InvalidEmailException;
 	public Register getUserByEmail(String email);
-	public Register getUserById(Integer id) throws IdNotFoundException;
+	public Register getUserById(Long id) throws IdNotFoundException;
 	public Optional<List<Register>> getAllUsers();
-	public String deleteUserById(Integer id) throws IdNotFoundException;
+	public String deleteUserById(Long id) throws IdNotFoundException;
 }

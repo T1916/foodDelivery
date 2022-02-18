@@ -13,9 +13,11 @@ import com.learning.dto.FoodType;
 public interface FoodRepository extends JpaRepository<Food, Integer>
 {
 	Boolean existsByFoodName(String foodName);
-	Boolean existsByFoodType(String foodType);
 	
-	Optional<List<Food>> findByFoodType(String foodType);
+	Optional<Food> findById(Integer id);
+	//Boolean existsByFoodType(String foodType);
+	
+	//Optional<List<Food>> findByFoodType(String foodType);
 	// the above retrieves data based on the foodtype
 
 }

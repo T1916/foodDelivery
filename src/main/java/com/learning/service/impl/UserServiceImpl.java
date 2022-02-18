@@ -54,25 +54,20 @@ public class UserServiceImpl implements UserService
 		Register register2 = userRepo.save(register);
 		if(register2!=null)
 		{
-			Login login = new Login(register.getEmail(), register.getPassword());
-			String result = loginService.addCredentials(login);
-			System.out.println(login);
-			if(result.equals("success"))
-			{
-				return register2;
-			}
-			else
-				return null;
-			
-		}	
-		else
-		{
-			return null;
+			return register2;
 		}
+//			Login login = new Login(register.getEmail(), register.getPassword());
+//			String result = loginService.addCredentials(login);
+//			System.out.println(login);			
+			
+		else
+			return null;			
+			
+
 	}
 
 	@Override
-	public Register updateUser(Integer id, String email, Register register) throws IdNotFoundException, InvalidEmailException 
+	public Register updateUser(Long id, String email, Register register) throws IdNotFoundException, InvalidEmailException 
 	{
 		// TODO Auto-generated method stub
 		//Register optional = this.getUserById(id);
@@ -106,7 +101,7 @@ public class UserServiceImpl implements UserService
 	}
 
 	@Override
-	public String deleteUserById(Integer id) throws IdNotFoundException 
+	public String deleteUserById(Long id) throws IdNotFoundException 
 	{
 		// TODO Auto-generated method stub
 		Register optional = this.getUserById(id);
@@ -120,7 +115,7 @@ public class UserServiceImpl implements UserService
 	}
 
 	@Override
-	public Register getUserById(Integer id) throws IdNotFoundException 
+	public Register getUserById(Long id) throws IdNotFoundException 
 	{
 		// TODO Auto-generated method stub
 		Optional<Register> optional = userRepo.findById(id);

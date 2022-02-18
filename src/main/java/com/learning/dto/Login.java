@@ -42,7 +42,6 @@ public class Login
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
 	@Size(max=50)
@@ -54,9 +53,9 @@ public class Login
 	private String password;
 	
 	
-//	@OneToOne
-//	@JoinColumn(name = "regId")
-//	@JsonProperty(access = Access.WRITE_ONLY)
-//	private Register register;
+	@OneToOne
+	@JoinColumn(name = "regId")
+	@JsonProperty(access = Access.WRITE_ONLY)
+	private Register register;
 
 }

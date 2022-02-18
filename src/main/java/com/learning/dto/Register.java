@@ -61,8 +61,9 @@ public class Register implements Comparable<Register>
 	}
 	
 	@Id
+	@Column(name = "regid")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Long id;
 	
 	@Size(max=50)
 	@Email
@@ -86,8 +87,18 @@ public class Register implements Comparable<Register>
 		return 0;
 	}
 	
-//	@OneToOne(mappedBy = "register", cascade = CascadeType.ALL)
-//	private Login login;
-//	
-
+	@OneToOne(mappedBy = "register", cascade = CascadeType.ALL)
+	private Login login;
+	
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable
+	private Set<Role> roles = new HashSet<>();
+	
+	public Register(String email, String name, String password, String address)
+	{
+		this.email = email;
+		this.name = name;
+		this.password = password;
+		this.address = address;
+	}
 }

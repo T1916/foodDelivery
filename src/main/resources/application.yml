@@ -18,6 +18,9 @@ spring:
         physical-strategy: com.learning.utils.CustomNamingStrategy
       ddl-auto: update
 server:
-  port: 9006
-  servlet:
-    context-path: /api
+  port: 9005
+  
+learning:
+  app:
+    jwtSecret: secretkey
+    jwtExpirationMs: 86400000
